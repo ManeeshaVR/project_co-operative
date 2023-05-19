@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="838.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cooperative.controller.DepositFormController">
+   <children>
+      <Label layoutX="113.0" layoutY="53.0" text="Deposit">
+         <font>
+            <Font name="Bell MT Bold" size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="96.0" prefWidth="1215.0" style="-fx-background-color: #10002b;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="67.0" layoutY="28.0" onAction="#depositsBtnOnAction" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: yellow;" text="Deposits" textFill="#232323">
+               <font>
+                  <Font name="Calibri Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="228.0" layoutY="28.0" onAction="#deposttransBtnOnaction" prefHeight="38.0" prefWidth="176.0" style="-fx-background-color: yellow;" text="Deposit Transactions">
+               <font>
+                  <Font name="Calibri Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="458.0" layoutY="27.0" onAction="#monthBtnOnAction" prefHeight="38.0" prefWidth="151.0" style="-fx-background-color: yellow;" text="Monthly Deposits" textFill="#232323">
+               <font>
+                  <Font name="Calibri Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="658.0" layoutY="26.0" onAction="#yearBtnOnAction" prefHeight="38.0" prefWidth="151.0" style="-fx-background-color: yellow;" text="Add Year Interest" textFill="#232323">
+               <font>
+                  <Font name="Calibri Bold" size="17.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane" layoutY="96.0" prefHeight="752.0" prefWidth="1215.0" style="-fx-background-color: blue;" />
+      <Label fx:id="lblTopic" layoutX="884.0" layoutY="31.0" text="Manage deposits" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

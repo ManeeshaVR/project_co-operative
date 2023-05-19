@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="838.0" prefWidth="1215.0" style="-fx-background-color: f1faee;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cooperative.controller.SearchFormController">
+   <children>
+      <TextField fx:id="txtSearch" layoutX="202.0" layoutY="51.0" onAction="#txtSearchOnAction" prefHeight="54.0" prefWidth="674.0" promptText="Search Member No" style="-fx-background-radius: 30;" />
+      <ImageView fitHeight="41.0" fitWidth="46.0" layoutX="810.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" rotate="-3.8">
+         <image>
+            <Image url="@../img/search_icon.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="80.0" layoutY="185.0" prefHeight="106.0" prefWidth="228.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <JFXButton fx:id="btnAccount" buttonType="RAISED" layoutX="96.0" layoutY="31.0" onAction="#btnAccountOnAction" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: #9b5de5;" text="Account" textFill="#ffbc42">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <Circle fill="#bdb2ff" layoutX="48.0" layoutY="52.0" radius="34.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="27.0" layoutY="32.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/dashMem.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="874.0" layoutY="185.0" prefHeight="106.0" prefWidth="228.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <JFXButton fx:id="btnLoan" buttonType="RAISED" layoutX="96.0" layoutY="31.0" onAction="#btnLoanOnAction" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: #00b4d8;" text="Loan" textFill="#ffbc42">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <Circle fill="#9bf6ff" layoutX="48.0" layoutY="52.0" radius="34.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="27.0" layoutY="32.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/dashLoan (1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="79.0" layoutY="354.0" prefHeight="106.0" prefWidth="228.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <JFXButton fx:id="btnDeposit" buttonType="RAISED" layoutX="96.0" layoutY="31.0" onAction="#btnDepositOnAction" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: #ef476f;" text="Deposit" textFill="#ffbc42">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <Circle fill="#ffadad" layoutX="48.0" layoutY="52.0" radius="34.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="27.0" layoutY="32.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/search_dep.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="881.0" layoutY="347.0" prefHeight="106.0" prefWidth="228.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <JFXButton fx:id="btnService" buttonType="RAISED" layoutX="96.0" layoutY="31.0" onAction="#btnServiceOnAction" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: #ff5400;" text="Service" textFill="#ffbc42">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <Circle fill="#ffd6a5" layoutX="48.0" layoutY="52.0" radius="34.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="27.0" layoutY="32.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/dashOther.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="90.0" layoutY="500.0" prefHeight="290.0" prefWidth="579.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <BarChart fx:id="chartAmounts" layoutX="27.0" layoutY="23.0" prefHeight="262.0" prefWidth="521.0" style="-fx-background-color: white;" title="Amounts">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="483.0" layoutY="250.0" prefHeight="106.0" prefWidth="243.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <JFXButton fx:id="btnAll" buttonType="RAISED" layoutX="96.0" layoutY="31.0" onAction="#btnAllOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #17c3b2;" text="All Details" textFill="#ffbc42">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <Circle fill="#98f5e1" layoutX="48.0" layoutY="52.0" radius="34.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="31.0" layoutY="37.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/All_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" height="140.0" layoutX="1020.0" layoutY="25.0" opacity="0.71" stroke="#f1faee" strokeType="INSIDE" width="145.0" />
+      <ImageView fitHeight="138.0" fitWidth="146.0" layoutX="1020.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/yLogo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="804.0" layoutY="504.0" prefHeight="270.0" prefWidth="337.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <PieChart fx:id="pieChart" layoutX="11.0" layoutY="13.0" prefHeight="237.0" prefWidth="311.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="allSearch" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="663085d1-9a3a-4a93-9719-6483abd0d855">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT a.memberNo AS Member_No, a.name AS Name, a.NIC,  m.salary, m.position, d.depositId AS Deposit_Id, d.shares AS Shares, d.compulsoryDeposits AS Compulsory_Deposits, d.specialDeposits AS Special_Deposits, d.pensionDeposits AS Pension_Deposits, l.loanId AS Loan_Id, l.loanAmount AS Loan_Amount, l.installments AS Insatallments, p.payAmount, p.paidAmount , o.serviceId AS Service_Id, o.amount AS Amount
+FROM account a
+JOIN member m on a.NIC = m.NIC
+left JOIN deposit d on a.memberNo = d.memberNo
+left JOIN loan l on a.memberNo = l.memberNo
+left join payloan p on l.loanId = p.loanId
+left JOIN otherservices o on a.memberNo = o.memberNo
+]]>
+	</queryString>
+	<field name="Member_No" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="memberNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="Member_No"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="NIC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NIC"/>
+		<property name="com.jaspersoft.studio.field.label" value="NIC"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="salary" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="salary"/>
+		<property name="com.jaspersoft.studio.field.label" value="salary"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="position" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="position"/>
+		<property name="com.jaspersoft.studio.field.label" value="position"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="Deposit_Id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="depositId"/>
+		<property name="com.jaspersoft.studio.field.label" value="Deposit_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="deposit"/>
+	</field>
+	<field name="Shares" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="shares"/>
+		<property name="com.jaspersoft.studio.field.label" value="Shares"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="deposit"/>
+	</field>
+	<field name="Compulsory_Deposits" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="compulsoryDeposits"/>
+		<property name="com.jaspersoft.studio.field.label" value="Compulsory_Deposits"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="deposit"/>
+	</field>
+	<field name="Special_Deposits" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="specialDeposits"/>
+		<property name="com.jaspersoft.studio.field.label" value="Special_Deposits"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="deposit"/>
+	</field>
+	<field name="Pension_Deposits" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="pensionDeposits"/>
+		<property name="com.jaspersoft.studio.field.label" value="Pension_Deposits"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="deposit"/>
+	</field>
+	<field name="Loan_Id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="loanId"/>
+		<property name="com.jaspersoft.studio.field.label" value="Loan_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loan"/>
+	</field>
+	<field name="Loan_Amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loanAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="Loan_Amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loan"/>
+	</field>
+	<field name="Insatallments" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="installments"/>
+		<property name="com.jaspersoft.studio.field.label" value="Insatallments"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loan"/>
+	</field>
+	<field name="payAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="payAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="payAmount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payloan"/>
+	</field>
+	<field name="paidAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="paidAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="paidAmount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payloan"/>
+	</field>
+	<field name="Service_Id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="serviceId"/>
+		<property name="com.jaspersoft.studio.field.label" value="Service_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="otherservices"/>
+	</field>
+	<field name="Amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="Amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="otherservices"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="842" height="100" forecolor="#000000" backcolor="#15616D" uuid="050a72be-6643-44b1-b019-c04af234e62b"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="670" y="5" width="144" height="20" forecolor="#C7F9CC" backcolor="#03045E" uuid="75958583-3093-48c9-a536-c50022bca144"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<rectangle radius="30">
+					<reportElement x="520" y="22" width="70" height="69" forecolor="#98F5E1" backcolor="#98F5E1" uuid="9bdc72a5-2ccf-4e10-a5ca-0fcb67cfb63a"/>
+				</rectangle>
+				<image>
+					<reportElement x="20" y="0" width="38" height="39" uuid="16643f6e-2bcc-4449-a8ec-ccd84b5d80e7"/>
+					<imageExpression><![CDATA["D:/My Projects/resources/wLogo.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="60" y="2" width="192" height="32" forecolor="#80FFDB" uuid="8b8fc470-1a52-46e0-afeb-012dc1721df0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial Black" size="15" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Co-operative Society]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="308" y="40" width="181" height="40" forecolor="#06D6A0" uuid="d284c128-8569-4cb2-9e55-43bf12125882"/>
+					<textElement textAlignment="Center">
+						<font fontName="Bell MT" size="25" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[All Details]]></text>
+				</staticText>
+				<image>
+					<reportElement x="530" y="32" width="50" height="50" uuid="e5485370-5597-4431-b406-15fb6a292f98"/>
+					<imageExpression><![CDATA["D:/My Projects/resources/All_icon.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="398" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="68" width="100" height="30" uuid="230636f0-5674-4af5-9722-6ccf61a56781"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Member_No}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="20" width="100" height="30" uuid="265845f4-1942-4138-88e3-c3d3a4285a45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Member No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="182" y="68" width="100" height="30" uuid="e095cddc-5a43-417d-ad83-aea1304f9aaf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="181" y="20" width="100" height="30" uuid="e8045f3f-35bc-4e83-8ab2-260a216bc5ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="68" width="100" height="30" uuid="eb26f200-96c1-45de-bbaf-0ea72b755d79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NIC}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="348" y="20" width="100" height="30" uuid="9fb7acf1-63bb-49c5-93af-c81651382096"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="529" y="68" width="100" height="30" uuid="583c7385-7aeb-45c8-8e36-b9fc1f42262b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{salary}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="528" y="20" width="100" height="30" uuid="53907e8c-14f4-4921-988f-1dffd43bf54f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Salary]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="688" y="68" width="100" height="30" uuid="5db91087-cf99-410f-a575-db31042220d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{position}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="685" y="20" width="100" height="30" uuid="7484e49c-5327-4fdf-8662-741d551f0249"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Position]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="200" width="100" height="30" uuid="6e66c8cb-ad20-4d5b-9e05-99d9e0256f3d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Deposit_Id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="145" width="100" height="30" uuid="234682e9-510d-4e25-9699-1d3b9b771bfc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Deposit Id]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="182" y="200" width="100" height="30" uuid="46276b74-0b47-4145-84fe-b4cf0aadb51a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Shares}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="146" width="100" height="30" uuid="1b9bccbe-2d23-4170-be46-e18702a7de00"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Shares]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="200" width="100" height="30" uuid="df6f9b40-6be3-49ad-8743-60a1fa410d59"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Compulsory_Deposits}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="330" y="146" width="150" height="30" uuid="c7723556-2a17-4500-8ca4-a4f698d06c66"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Compulsory Deposits]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="530" y="200" width="100" height="30" uuid="e18cea1e-1384-4297-a15c-75308699a8dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Special_Deposits}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="530" y="146" width="110" height="30" uuid="04ceb442-888e-4071-9bf6-fdba9c117d1a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Special Deposits]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="687" y="200" width="100" height="30" uuid="f2e3fbd0-7c87-434d-853f-40502c92ffca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Pension_Deposits}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="680" y="146" width="119" height="30" uuid="39438c8c-8092-4ab9-8587-8d5ba1324f01"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pension Deposits]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="12" y="336" width="100" height="30" uuid="e0a2113e-2525-4d5c-9561-1dd75f53e67b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Loan_Id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="280" width="100" height="30" uuid="b6fcf04a-6241-44bb-a64d-258c94990841"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="280" width="100" height="30" uuid="e02ed308-76a8-46d8-a0aa-47e3ffc7f63e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pay Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="277" width="107" height="30" uuid="4fbe1f62-30cc-4154-a96a-48b7ef3eb5d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remain Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="510" y="336" width="100" height="30" uuid="5b59766d-9bb9-42a5-ad7e-3b0a239b11a3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Service_Id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="520" y="280" width="100" height="30" uuid="90f3365f-c6fe-4a1a-93a1-462d3adfd167"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Id]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="680" y="336" width="100" height="30" uuid="7dd8f778-bfba-4539-89e9-85849243019f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Amount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="680" y="277" width="118" height="30" uuid="b559ce9d-cd07-4a76-93e1-5746fa6af10b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="336" width="100" height="30" uuid="38a4cd81-5a10-441b-a6e0-7d477b2d1563"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="336" width="100" height="30" uuid="70d49506-8b1c-4f3b-b660-27a7e1f89ed1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paidAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="65" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="1" width="842" height="64" forecolor="#D0B48E" backcolor="#1B998B" uuid="7dd9caa6-d849-48a2-9bca-76489c64cbed"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="7" y="3" width="118" height="20" forecolor="#FFFFFF" uuid="1ff342aa-d96e-4c43-8b3f-40fada158841"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<rectangle radius="20">
+					<reportElement x="751" y="3" width="50" height="50" forecolor="#2364AA" backcolor="#77BFA3" uuid="4090274c-9ccb-40a6-91ae-a050cac1d3c7"/>
+				</rectangle>
+				<image>
+					<reportElement x="750" y="3" width="50" height="50" forecolor="#E0AAFF" uuid="7305aca6-cd05-4cd8-95e4-ea6476858d37"/>
+					<imageExpression><![CDATA["D:/My Projects/resources/yLogo.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="450" y="20" width="250" height="30" forecolor="#E9FF70" backcolor="#D90429" uuid="9465cdca-6b99-4c15-b871-5fc32ce09a8f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[Co-operative savings and loan society]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="37" width="80" height="20" forecolor="#FFFFFF" uuid="f11aeddc-1087-4989-83bd-ac3ac1684cb2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement x="130" y="37" width="40" height="20" forecolor="#FFFFFF" uuid="cf468eee-accf-4be1-b071-201c3c5937b4"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnFooter>
+</jasperReport>

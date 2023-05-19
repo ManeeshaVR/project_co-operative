@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="752.0" prefWidth="1215.0" style="-fx-background-color: #10002b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cooperative.controller.PayOtherServiceFormController">
+   <children>
+      <Rectangle arcHeight="60.0" arcWidth="60.0" height="233.0" layoutX="465.0" layoutY="141.0" opacity="0.34" stroke="BLACK" strokeType="INSIDE" width="668.0" />
+      <JFXTextField fx:id="txtMemberNo" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="142.0" layoutY="59.0" onAction="#txtMemberNoOnAction" prefHeight="26.0" prefWidth="193.0" promptText="Member No" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtNic" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="923.0" layoutY="64.0" prefHeight="26.0" prefWidth="193.0" promptText="NIC" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="517.0" layoutY="60.0" prefHeight="26.0" prefWidth="193.0" promptText="Name" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="1070.0" layoutY="405.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #57cc99; -fx-background-radius: 10;" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="905.0" layoutY="405.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #62b6cb; -fx-background-radius: 10;" text="Update">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/update.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="736.0" layoutY="405.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ff595e; -fx-background-radius: 10;" text="Delete">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="568.0" layoutY="405.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ffd60a; -fx-background-radius: 10;" text="Clear">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/clear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblOtherSer" layoutX="131.0" layoutY="475.0" prefHeight="255.0" prefWidth="967.0">
+         <columns>
+            <TableColumn fx:id="colServiceId" prefWidth="138.6666259765625" text="Service Id" />
+            <TableColumn fx:id="colPayId" prefWidth="144.5333251953125" text="Pay Service Id" />
+            <TableColumn fx:id="colAmount" prefWidth="230.40005493164062" text="Amount" />
+            <TableColumn fx:id="colPayAmount" prefWidth="206.39990234375" text="Pay Amount" />
+            <TableColumn fx:id="colDate" prefWidth="245.60002441406255" text="Date" />
+         </columns>
+         <stylesheets>
+            <URL value="@../styles/table.css" />
+            <URL value="@../styles/tablebg.css" />
+         </stylesheets>
+      </TableView>
+      <JFXTextField fx:id="txtPayId" focusColor="#ff006e" labelFloat="true" layoutX="103.0" layoutY="285.0" onAction="#txtPayIdOnAction" prefHeight="47.0" prefWidth="209.0" promptText="Pay Id" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXTextField>
+      <DatePicker fx:id="datePay" layoutX="870.0" layoutY="293.0" prefHeight="33.0" prefWidth="209.0" promptText="Date" style="-fx-background-color: #09bff2; -fx-border-color: #09bff2;" />
+      <JFXTextField fx:id="txtPayAmount" focusColor="#fcec08" labelFloat="true" layoutX="509.0" layoutY="284.0" onAction="#txtPayAmountOnAction" prefHeight="33.0" prefWidth="208.0" promptText="Pay Amount" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtType" focusColor="#fcec08" labelFloat="true" layoutX="513.0" layoutY="183.0" onAction="#txtTypeOnAction" prefHeight="26.0" prefWidth="193.0" promptText="Service Type" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAmount" editable="false" focusColor="#fcec08" labelFloat="true" layoutX="852.0" layoutY="181.0" prefHeight="33.0" prefWidth="208.0" promptText="Amount" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXComboBox fx:id="cmbServiceId" focusColor="#ff006e" labelFloat="true" layoutX="96.0" layoutY="189.0" onAction="#cmbServiceIdOnAction" prefHeight="43.0" prefWidth="225.0" promptText="Service Id" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="402.0" layoutY="405.0" onAction="#btnReportsOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ff9770; -fx-background-radius: 10;" text="Report">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/reports.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

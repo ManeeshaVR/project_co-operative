@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="752.0" prefWidth="1215.0" style="-fx-background-color: #10002b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cooperative.controller.DepositsController">
+   <children>
+      <Rectangle arcHeight="60.0" arcWidth="60.0" height="305.0" layoutX="424.0" layoutY="118.0" opacity="0.31" stroke="BLACK" strokeType="INSIDE" width="714.0" />
+      <JFXTextField fx:id="txtPenDeposits" focusColor="#fcec08" labelFloat="true" layoutX="880.0" layoutY="261.0" onAction="#txtPenDepositsOnAction" prefHeight="26.0" prefWidth="193.0" promptText="Pension Deposits" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDesc" focusColor="#fcec08" labelFloat="true" layoutX="703.0" layoutY="356.0" prefHeight="26.0" prefWidth="193.0" promptText="Description" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtSpecDeposits" focusColor="#fcec08" labelFloat="true" layoutX="880.0" layoutY="163.0" onAction="#txtSpecDepositsOnAction" prefHeight="26.0" prefWidth="193.0" promptText="Special Deposits" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtShares" focusColor="#fcec08" labelFloat="true" layoutX="473.0" layoutY="160.0" onAction="#txtSharesOnAction" prefHeight="33.0" prefWidth="208.0" promptText="Shares" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtComDeposits" focusColor="#fcec08" labelFloat="true" layoutX="475.0" layoutY="259.0" onAction="#txtComDepositsOnAction" prefHeight="26.0" prefWidth="193.0" promptText="Compulsory Deposits" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDepositId" focusColor="#ff006e" labelFloat="true" layoutX="83.0" layoutY="253.0" onAction="#txtDepositIdOnAction" prefHeight="47.0" prefWidth="209.0" promptText="Deposit Id" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="1056.0" layoutY="449.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #57cc99; -fx-background-radius: 10;" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="891.0" layoutY="449.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #62b6cb; -fx-background-radius: 10;" text="Update">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/update.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="722.0" layoutY="449.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ff595e; -fx-background-radius: 10;" text="Delete">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="554.0" layoutY="449.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ffd60a; -fx-background-radius: 10;" text="Clear">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/clear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtNic" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="915.0" layoutY="46.0" prefHeight="26.0" prefWidth="193.0" promptText="NIC" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="509.0" layoutY="42.0" prefHeight="26.0" prefWidth="193.0" promptText="Name" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <TableView fx:id="tblDeposits" layoutX="71.0" layoutY="519.0" prefHeight="214.0" prefWidth="1065.0">
+         <columns>
+            <TableColumn fx:id="colMemberNo" prefWidth="118.13328742980957" text="Member No" />
+            <TableColumn fx:id="colDepositId" prefWidth="137.06663513183594" text="Deposit Id" />
+            <TableColumn fx:id="colShares" prefWidth="133.86660766601562" text="Shares" />
+            <TableColumn fx:id="colComDeposits" prefWidth="166.933349609375" text="Compulsory Deposits" />
+            <TableColumn fx:id="colSpecDeposits" prefWidth="156.0" text="Special Deposits" />
+            <TableColumn fx:id="colPenDeposits" prefWidth="150.39996337890625" text="Pension Deposits" />
+            <TableColumn fx:id="colDesc" prefWidth="201.06671142578125" text="Description" />
+         </columns>
+         <stylesheets>
+            <URL value="@../styles/table.css" />
+            <URL value="@../styles/tablebg.css" />
+         </stylesheets>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="389.0" layoutY="446.0" onAction="#btnReportsOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ff9770; -fx-background-radius: 10;" text="Report">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/reports.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtMemberNo" focusColor="#ff006e" labelFloat="true" layoutX="122.0" layoutY="39.0" onAction="#txtMemberNoOnAction" prefHeight="26.0" prefWidth="193.0" promptText="Member No" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>

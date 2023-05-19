@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root2" prefHeight="848.0" prefWidth="1215.0" style="-fx-background-color: #ffffff;" stylesheets="@../styles/dashboardPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cooperative.controller.MemberFormController">
+   <children>
+      <AnchorPane prefHeight="96.0" prefWidth="1215.0" style="-fx-background-color: #10002b;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="67.0" layoutY="28.0" onAction="#memberBtnOnAction" prefHeight="38.0" prefWidth="92.0" style="-fx-background-color: yellow;" text="Member" textFill="#232323">
+               <font>
+                  <Font name="Calibri Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="217.0" layoutY="28.0" onAction="#accountBtnOnaction" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: yellow;" text="Account">
+               <font>
+                  <Font name="Calibri Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblTopic" layoutX="874.0" layoutY="26.0" text="Add a new member" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane" layoutY="96.0" prefHeight="752.0" prefWidth="1215.0" style="-fx-background-color: blue;" />
+   </children>
+</AnchorPane>

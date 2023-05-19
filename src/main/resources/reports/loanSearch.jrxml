@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="loanSearch" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b07bf21-ed85-4ca0-95f0-0df56ddd6ee2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT a.memberNo AS Member_No, a.name AS Name, a.NIC, l.loanId AS Loan_Id, l.loanAmount AS Loan_Amount, l.installments AS Installments, l.firInsAmount AS 1st_Installment_Amount, l.installmentAmount AS Other_Installments_Amount, p.payAmount AS Pay_Amount, p.paidAmount AS Remain_Amount, p.completedInstallments AS Completed_Installments FROM account a
+left JOIN loan l on a.memberNo = l.memberNo
+left JOIN payloan p on l.loanId = p.loanId
+where l.Completed=false]]>
+	</queryString>
+	<field name="Member_No" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="memberNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="Member_No"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="NIC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NIC"/>
+		<property name="com.jaspersoft.studio.field.label" value="NIC"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Loan_Id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="loanId"/>
+		<property name="com.jaspersoft.studio.field.label" value="Loan_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loan"/>
+	</field>
+	<field name="Loan_Amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="loanAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="Loan_Amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loan"/>
+	</field>
+	<field name="Installments" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="installments"/>
+		<property name="com.jaspersoft.studio.field.label" value="Installments"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loan"/>
+	</field>
+	<field name="1st_Installment_Amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="firInsAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="1st_Installment_Amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loan"/>
+	</field>
+	<field name="Other_Installments_Amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="installmentAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="Other_Installments_Amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="loan"/>
+	</field>
+	<field name="Pay_Amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="payAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="Pay_Amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payloan"/>
+	</field>
+	<field name="Remain_Amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="paidAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="Remain_Amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payloan"/>
+	</field>
+	<field name="Completed_Installments" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="completedInstallments"/>
+		<property name="com.jaspersoft.studio.field.label" value="Completed_Installments"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payloan"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="594" height="100" forecolor="#000000" backcolor="#03045E" uuid="8e29a349-fcef-4248-a26a-4a03562a816c"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="440" y="5" width="144" height="20" forecolor="#48CAE4" backcolor="#03045E" uuid="239fb760-2d6b-4c2c-a80b-d4cda0e90f06"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<rectangle radius="30">
+					<reportElement x="390" y="30" width="59" height="59" forecolor="#BDB2FF" backcolor="#9BF6FF" uuid="3b2666cb-420b-43b5-8a7c-31a42c8a493c"/>
+				</rectangle>
+				<image>
+					<reportElement x="17" y="3" width="30" height="30" uuid="cbdb7801-1edd-4b63-a394-16acb922f7cb"/>
+					<imageExpression><![CDATA["D:/My Projects/resources/wLogo.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="50" y="0" width="179" height="30" forecolor="#90E0EF" uuid="47808aaf-18bb-40b9-9130-abdfbe1bfa36"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial Black" size="15" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Co-operative Society]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="189" y="50" width="181" height="40" forecolor="#0077B6" uuid="b0cef914-0cdd-433e-af9d-6c6e60650368"/>
+					<textElement textAlignment="Center">
+						<font fontName="Bell MT" size="25" isBold="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Loan Details]]></text>
+				</staticText>
+				<image>
+					<reportElement x="394" y="33" width="50" height="50" uuid="0f61f9f9-0869-4cc3-9414-d435df23e412"/>
+					<imageExpression><![CDATA["D:/My Projects/resources/dashLoan (1).png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="67" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="587" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="-45" width="110" height="30" uuid="95eeed4d-1943-4d42-8b44-de9a3f2ad1b8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Member No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="78" width="100" height="23" uuid="f7b39d5b-1356-4177-b63c-456d4c89a751"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="137" width="100" height="23" uuid="888c9e65-b847-46c4-b635-85aa7d4610e0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="198" width="100" height="23" uuid="70013274-8944-487d-bb81-cfe4578bb20f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="259" width="130" height="23" uuid="deb6ba0f-ebf2-4285-a37e-c826fb64df75"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Installments]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="318" width="130" height="23" uuid="c6cab439-032d-4b52-acee-af95fce95855"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1st Installment Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="18" width="100" height="23" uuid="1ca7c711-1a79-4ed0-9390-1014ca679e42"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="-45" width="100" height="30" uuid="2329cbd0-65da-4d86-9617-50710a6bafc3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="18a7bddf-b2d9-46fc-8ec1-874b388569a9"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Member_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="18" width="100" height="30" uuid="fbf6dc4d-d865-49b3-a295-479aab5b703a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e611ef81-1d14-4ecf-8378-fe8d1742817f"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="78" width="100" height="30" uuid="23cd1dfd-abb7-462c-8f5a-0e7c1bd08ff6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ea7cc327-0f8c-4e64-8c87-d6cbc4ef4e70"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NIC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="137" width="100" height="30" uuid="8d579394-4f74-4a5b-be97-567086436ebc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="66dd2f96-fbbf-4b40-8670-b6aa86801d0f"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Loan_Id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="198" width="100" height="30" uuid="cd6ae878-041f-4b86-8aaa-6d3f97edc81c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="63f6fb12-4e32-4548-8426-d7f1a0a1eeee"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Loan_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="259" width="100" height="30" uuid="93d12294-a4dc-4b2a-8a67-b6c5093a23e6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e6433447-0788-4851-9aba-9fcef632b4e6"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Installments}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="314" width="100" height="30" uuid="e32ff0a8-22bb-4e1c-8390-f975a628597b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f23f992-27a4-4700-b363-24a66eae0b84"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{1st_Installment_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="371" width="100" height="30" uuid="4d42a09b-f2a9-48c0-bba8-cc5424c6d4c3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3036c8bc-bf12-432c-accb-17b2164dbe19"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Other_Installments_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="431" width="100" height="30" uuid="ef715424-b55a-4dfd-8dc0-ffc91b871872">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a66d6cf-2022-4206-ba6f-38c0902b1889"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Pay_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="491" width="100" height="30" uuid="8679ee76-a1f2-412f-bc6f-97cccb10969b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="66ab8bab-cae2-417a-943a-f8d759a2b1e6"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Remain_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="546" width="100" height="30" uuid="07465dc7-0fda-4138-8f53-f7356a70a0e3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e23c402a-bc74-4ec2-b4c0-3831bebc6019"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Completed_Installments}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="375" width="150" height="23" uuid="0e0bb801-506d-4561-ab9b-652eb49d2534"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Other Installment Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="435" width="130" height="23" uuid="a5df8147-7a36-420b-911b-2f15ff015094"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pay Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="495" width="130" height="23" uuid="1499369c-951d-4943-ae1d-6a710bc5ccb7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remain Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="550" width="140" height="23" uuid="ad867224-2e22-4d7f-a46d-db2cb8b243ea"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Book Antiqua" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Completed Installments]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="65" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="1" width="595" height="64" forecolor="#D0B48E" backcolor="#023E8A" uuid="64c770cc-914e-4693-a763-439f998a1844"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="7" y="3" width="118" height="20" forecolor="#FFFFFF" uuid="6a1f4644-81b1-4499-acac-29ce3013a6de"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<rectangle radius="20">
+					<reportElement x="528" y="7" width="50" height="50" forecolor="#2364AA" backcolor="#2364AA" uuid="d280d3fc-5779-4ae2-8e72-cba8a1939079"/>
+				</rectangle>
+				<image>
+					<reportElement x="527" y="7" width="50" height="50" forecolor="#E0AAFF" uuid="e447032d-241c-4e5d-b3e7-f20b65cfa2f4"/>
+					<imageExpression><![CDATA["D:/My Projects/resources/yLogo.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="230" y="21" width="250" height="30" forecolor="#E9FF70" backcolor="#D90429" uuid="e2d88d28-f988-4e16-9e36-cb764fca4dd4"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[Co-operative savings and loan society]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="37" width="80" height="20" forecolor="#FFFFFF" uuid="4dd966f2-5aeb-491c-935f-c1ea4e273bfe"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement x="130" y="37" width="40" height="20" forecolor="#FFFFFF" uuid="08d701b6-6961-4cde-ac93-b8238178a4f4"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnFooter>
+</jasperReport>

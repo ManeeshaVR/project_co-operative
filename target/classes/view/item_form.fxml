@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="738.0" prefWidth="1538.0" style="-fx-background-color: #10002b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cooperative.controller.ItemFormController">
+   <children>
+      <Rectangle arcHeight="60.0" arcWidth="60.0" height="384.0" layoutX="63.0" layoutY="154.0" opacity="0.39" stroke="BLACK" strokeType="INSIDE" width="704.0" />
+      <JFXTextField fx:id="txtUniPrice" focusColor="#fcec08" labelFloat="true" layoutX="491.0" layoutY="339.0" onAction="#txtUniPriceOnAction" prefHeight="27.0" prefWidth="210.0" promptText="Unit Price" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDesc" focusColor="#fcec08" labelFloat="true" layoutX="339.0" layoutY="440.0" prefHeight="26.0" prefWidth="193.0" promptText="Description" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" focusColor="#fcec08" labelFloat="true" layoutX="121.0" layoutY="337.0" onAction="#txtNameOnAction" prefHeight="26.0" prefWidth="193.0" promptText="Name" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtItemId" focusColor="#fcec08" labelFloat="true" layoutX="121.0" layoutY="214.0" onAction="#txtItemIdOnAction" prefHeight="34.0" prefWidth="202.0" promptText="Item Id" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="699.0" layoutY="636.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #57cc99; -fx-background-radius: 10;" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="534.0" layoutY="636.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #62b6cb; -fx-background-radius: 10;" text="Update">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/update.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="365.0" layoutY="636.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ff595e; -fx-background-radius: 10;" text="Delete">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="197.0" layoutY="636.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ffd60a; -fx-background-radius: 10;" text="Clear">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/clear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblItem" layoutX="791.0" layoutY="95.0" prefHeight="526.0" prefWidth="729.0">
+         <columns>
+            <TableColumn fx:id="colItemId" prefWidth="86.39996337890625" text="ItemId" />
+            <TableColumn fx:id="colName" prefWidth="173.0665283203125" text="Name" />
+            <TableColumn fx:id="colType" prefWidth="108.533447265625" text="Type" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="140.533447265625" text="Unit Price" />
+            <TableColumn fx:id="colDesc" prefWidth="118.6666259765625" text="Description" />
+            <TableColumn fx:id="colQty" prefWidth="103.99990234375002" text="Qty" />
+         </columns>
+         <stylesheets>
+            <URL value="@../styles/tablebg.css" />
+            <URL value="@../styles/table.css" />
+         </stylesheets>
+      </TableView>
+      <JFXComboBox fx:id="cmbType" focusColor="#fcec08" labelFloat="true" layoutX="486.0" layoutY="226.0" prefHeight="26.0" prefWidth="210.0" promptText="Type" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2" />
+      <JFXButton buttonType="RAISED" layoutX="37.0" layoutY="634.0" onAction="#btnReportsOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ff9770; -fx-background-radius: 10;" text="Report">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/reports.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

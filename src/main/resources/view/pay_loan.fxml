@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="752.0" prefWidth="1215.0" style="-fx-background-color: #10002b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cooperative.controller.PayLoanController">
+   <children>
+      <Rectangle arcHeight="60.0" arcWidth="60.0" height="316.0" layoutX="837.0" layoutY="107.0" opacity="0.39" stroke="BLACK" strokeType="INSIDE" width="298.0" />
+      <Rectangle arcHeight="60.0" arcWidth="60.0" height="316.0" layoutX="388.0" layoutY="107.0" opacity="0.39" stroke="BLACK" strokeType="INSIDE" width="298.0" />
+      <JFXTextField fx:id="txtCompInstallments" focusColor="#fcec08" labelFloat="true" layoutX="885.0" layoutY="248.0" prefHeight="26.0" prefWidth="193.0" promptText="Completed Installments" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDescription" focusColor="#fcec08" labelFloat="true" layoutX="891.0" layoutY="351.0" prefHeight="26.0" prefWidth="193.0" promptText="Description" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtInstallments" editable="false" focusColor="#fcec08" labelFloat="true" layoutX="885.0" layoutY="139.0" prefHeight="26.0" prefWidth="193.0" promptText="Installments" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPayId" focusColor="#fcec08" labelFloat="true" layoutX="432.0" layoutY="139.0" onAction="#txtPayIdOnAction" prefHeight="33.0" prefWidth="208.0" promptText="Pay Loan Id" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPayAmount" editable="false" focusColor="#fcec08" labelFloat="true" layoutX="432.0" layoutY="248.0" prefHeight="26.0" prefWidth="193.0" promptText="Pay Amount" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" disable="true" layoutX="1065.0" layoutY="446.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #57cc99; -fx-background-radius: 10;" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="900.0" layoutY="446.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #62b6cb; -fx-background-radius: 10;" text="Update">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/update.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" disable="true" layoutX="731.0" layoutY="446.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ff595e; -fx-background-radius: 10;" text="Delete">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="563.0" layoutY="446.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ffd60a; -fx-background-radius: 10;" text="Clear">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/clear.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtNic" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="905.0" layoutY="44.0" prefHeight="26.0" prefWidth="193.0" promptText="NIC" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="499.0" layoutY="44.0" prefHeight="26.0" prefWidth="193.0" promptText="Name" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXComboBox fx:id="cmbLoanId" focusColor="#ff006e" labelFloat="true" layoutX="46.0" layoutY="180.0" onAction="#cmbLoanIdOnAction" prefHeight="43.0" prefWidth="225.0" promptText="Loan Id" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE" />
+      <JFXTextField fx:id="txtLoanAmount" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="54.0" layoutY="305.0" prefHeight="26.0" prefWidth="193.0" promptText="Loan Amount" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtMemberNo" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="124.0" layoutY="44.0" prefHeight="26.0" prefWidth="193.0" promptText="Member No" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <TableView fx:id="tblPayLoan" layoutX="38.0" layoutY="514.0" prefHeight="222.0" prefWidth="1142.0">
+         <columns>
+            <TableColumn fx:id="colLoanId" prefWidth="118.13328742980957" text="Loan Id" />
+            <TableColumn fx:id="colAmount" prefWidth="242.9332733154297" text="Amount" />
+            <TableColumn fx:id="colPayLoanId" prefWidth="123.7332763671875" text="Pay Loan Id" />
+            <TableColumn fx:id="colPayAmount" prefWidth="238.66656494140625" text="Pay Amount" />
+            <TableColumn fx:id="colPaidAmount" prefWidth="241.33343505859375" text="Remain Amount" />
+            <TableColumn fx:id="colIns" prefWidth="183.19989013671875" text="Completed Installments" />
+         </columns>
+         <stylesheets>
+            <URL value="@../styles/table.css" />
+            <URL value="@../styles/tablebg.css" />
+         </stylesheets>
+      </TableView>
+      <JFXTextField fx:id="txtLoanId" editable="false" focusColor="#ff006e" labelFloat="true" layoutX="48.0" layoutY="193.0" prefHeight="26.0" prefWidth="193.0" promptText="Loan Id" style="-fx-prompt-text-fill: #ffffff; -fx-text-fill: #ff006e;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="397.0" layoutY="445.0" onAction="#btnReportsOnAction" prefHeight="44.0" prefWidth="125.0" style="-fx-background-color: #ff9770; -fx-background-radius: 10;" text="Report">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/reports.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtPaidAmount" editable="false" focusColor="#fcec08" labelFloat="true" layoutX="432.0" layoutY="351.0" prefHeight="26.0" prefWidth="193.0" promptText="Paid Amount" style="-fx-prompt-text-fill: #09bff2; -fx-text-fill: #fcec08;" unFocusColor="#09bff2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>
