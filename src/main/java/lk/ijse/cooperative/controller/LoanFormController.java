@@ -66,8 +66,11 @@ public class LoanFormController implements Initializable {
                 }
                 if (count == data.size()) {
                     new Alert(Alert.AlertType.CONFIRMATION, "All monthly loans updated successfully").show();
+                    pane.getChildren().clear();
+                    pane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/pay_loan.fxml")));
+                    lblTopic.setText("Pay the loan");
                 }
-            } catch (SQLException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Someyhing went wrong!").show();
             }

@@ -63,8 +63,11 @@ public class DepositFormController implements Initializable {
                 }
                 if (count == data.size()) {
                     new Alert(Alert.AlertType.CONFIRMATION, "All monthly deposits updated successfully").show();
+                    pane.getChildren().clear();
+                    pane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/deposits.fxml")));
+                    lblTopic.setText("Manage deposits");
                 }
-            } catch (SQLException e) {
+            } catch (SQLException | IOException e) {
                 new Alert(Alert.AlertType.ERROR, "Someyhing went wrong!").show();
             }
         }
@@ -90,8 +93,11 @@ public class DepositFormController implements Initializable {
                 }
                 if (count == data.size()) {
                     new Alert(Alert.AlertType.CONFIRMATION, "All year interests updated successfully").show();
+                    pane.getChildren().clear();
+                    pane.getChildren().add(FXMLLoader.load(getClass().getResource("/view/deposits.fxml")));
+                    lblTopic.setText("Manage deposits");
                 }
-            } catch (SQLException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         }

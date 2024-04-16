@@ -124,10 +124,10 @@ public class DepositModel {
 
     public static boolean addYearInterest(DepositsTM dp) throws SQLException {
         double depInt = InterestModel.getDepositId();
-        double shares = dp.getShares()*0.04;
-        double comDep = dp.getComDeposits()*0.04;
-        double speDep = dp.getSpecDeposits()*0.04;
-        double penDep = dp.getPenDeposits()*0.04;
+        double shares = 0;
+        double comDep = dp.getComDeposits()*depInt;
+        double speDep = dp.getSpecDeposits()*depInt;
+        double penDep = dp.getPenDeposits()*depInt;
         String sql = "UPDATE Deposit SET shares=(shares+?), compulsoryDeposits=(compulsoryDeposits+?), specialDeposits=(specialDeposits+?), pensionDeposits=(pensionDeposits+?) WHERE depositId=?";
         return CrudUtil.execute(sql, shares, comDep, speDep, penDep, dp.getDepositId());
     }
